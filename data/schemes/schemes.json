@@ -1,0 +1,117 @@
+[
+  {
+    "id": "PMEGP",
+    "name": "PMEGP — Prime Minister's Employment Generation Programme",
+    "authority": "Khadi & Village Industries Commission (KVIC), Ministry of MSME",
+    "summary": "Margin-money subsidy on new manufacturing or service projects. Route through KVIC / DIC / State Board.",
+    "route": "KVIC / District Industries Centre",
+    "citation": {
+      "doc_id": "kvic_pmegp_guidelines",
+      "locator": "PMEGP guidelines, KVIC circular (as amended)",
+      "url": "https://www.kviconline.gov.in/pmegpeportal/",
+      "verified_on": null,
+      "verified_by": null
+    },
+    "criteria": [
+      { "key": "new_unit", "label": "New unit (not an existing business)", "status": "met" },
+      { "key": "udyam", "label": "Udyam registration completed", "status": "unknown" },
+      { "key": "project_limit", "label": "Project within ₹50L (mfg) / ₹20L (service) ceiling", "status": "unknown" },
+      { "key": "edp", "label": "EDP training completed", "status": "unknown" }
+    ]
+  },
+  {
+    "id": "MUDRA_KISHORE",
+    "name": "MUDRA — Kishore",
+    "authority": "Micro Units Development & Refinance Agency (MUDRA)",
+    "summary": "Collateral-free loan for micro units, ₹50,001 to ₹5,00,000. Applied via any scheduled commercial bank, RRB or MFI.",
+    "route": "Any scheduled bank / RRB / MFI",
+    "citation": {
+      "doc_id": "mudra_scheme_page",
+      "locator": "MUDRA scheme guidelines (Kishore slab)",
+      "url": "https://www.mudra.org.in/",
+      "verified_on": null,
+      "verified_by": null
+    },
+    "criteria": [
+      { "key": "non_farm", "label": "Non-farm income-generating activity", "status": "met" },
+      { "key": "within_slab", "label": "Loan requirement within ₹5L slab", "status": "unknown" },
+      { "key": "bank_relationship", "label": "Bank relationship established", "status": "unknown" }
+    ]
+  },
+  {
+    "id": "CGTMSE",
+    "name": "CGTMSE — Credit Guarantee for MSEs",
+    "authority": "Credit Guarantee Fund Trust for Micro & Small Enterprises",
+    "summary": "Guarantee cover on collateral-free bank loans up to ₹5 crore. Applied through your lender, not directly.",
+    "route": "Applied through your lender (SIDBI-empanelled)",
+    "citation": {
+      "doc_id": "cgtmse_circular",
+      "locator": "CGTMSE operating guidelines",
+      "url": "https://www.cgtmse.in/",
+      "verified_on": null,
+      "verified_by": null
+    },
+    "criteria": [
+      { "key": "mse", "label": "Registered as micro or small enterprise", "status": "unknown" },
+      { "key": "eligible_lender", "label": "Loan from CGTMSE-empanelled lender", "status": "unknown" },
+      { "key": "non_agri", "label": "Non-agricultural activity", "status": "met" }
+    ]
+  },
+  {
+    "id": "STAND_UP_INDIA",
+    "name": "Stand-Up India",
+    "authority": "Ministry of Finance / Department of Financial Services",
+    "summary": "Bank loan between ₹10 lakh and ₹1 crore for SC/ST or women entrepreneurs setting up greenfield enterprises.",
+    "route": "Any scheduled commercial bank branch",
+    "citation": {
+      "doc_id": "standupindia_scheme",
+      "locator": "Stand-Up India scheme guidelines",
+      "url": "https://www.standupmitra.in/",
+      "verified_on": null,
+      "verified_by": null
+    },
+    "criteria": [
+      { "key": "greenfield", "label": "Greenfield project (first-time entrepreneur)", "status": "met" },
+      { "key": "eligible_category", "label": "SC / ST / woman-led enterprise", "status": "unknown" },
+      { "key": "loan_range", "label": "Loan need between ₹10L and ₹1Cr", "status": "unknown" }
+    ]
+  },
+  {
+    "id": "NEEDS",
+    "name": "NEEDS (Tamil Nadu)",
+    "authority": "Tamil Nadu MSME Department",
+    "summary": "New Entrepreneur-cum-Enterprise Development Scheme. Subsidy + soft loan for degree/diploma holders starting a unit.",
+    "route": "TN MSME Department / District Industries Centre",
+    "citation": {
+      "doc_id": "tn_needs_scheme",
+      "locator": "NEEDS scheme guidelines, TN MSME Dept.",
+      "url": "https://msme.tn.gov.in/",
+      "verified_on": null,
+      "verified_by": null
+    },
+    "criteria": [
+      { "key": "qualification", "label": "Degree / diploma-holder", "status": "unknown" },
+      { "key": "tamil_nadu", "label": "Business located in Tamil Nadu", "status": "met" },
+      { "key": "new_unit", "label": "Setting up a new unit", "status": "met" }
+    ]
+  },
+  {
+    "id": "UYEGP",
+    "name": "UYEGP — Unemployed Youth Employment Generation Programme (TN)",
+    "authority": "Tamil Nadu MSME Department",
+    "summary": "Subsidy + soft loan for unemployed youth (18–45) starting a business in Tamil Nadu.",
+    "route": "TN MSME Department / District Industries Centre",
+    "citation": {
+      "doc_id": "tn_uyegp_scheme",
+      "locator": "UYEGP scheme guidelines, TN MSME Dept.",
+      "url": "https://msme.tn.gov.in/",
+      "verified_on": null,
+      "verified_by": null
+    },
+    "criteria": [
+      { "key": "age_band", "label": "Age between 18 and 45", "status": "unknown" },
+      { "key": "tamil_nadu", "label": "Business located in Tamil Nadu", "status": "met" },
+      { "key": "unemployed", "label": "Unemployed at time of application", "status": "unknown" }
+    ]
+  }
+]

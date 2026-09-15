@@ -1,0 +1,21 @@
+{
+  "sector": "food-service",
+  "label": "Food service — small scale",
+  "capex": [
+    { "key": "premises_deposit",    "label": "Premises deposit (3 months)",        "value_inr": 60000,  "benchmark_range": [40000, 90000],  "note": "Not applicable for home-based operations" },
+    { "key": "equipment",           "label": "Equipment & vessels",                "value_inr": 140000, "benchmark_range": [120000, 180000] },
+    { "key": "licences",            "label": "Licences & registrations",           "value_inr": 0,      "note": "Pulled from your pathway" },
+    { "key": "initial_stock",       "label": "Initial raw material",               "value_inr": 45000,  "benchmark_range": [30000, 60000] },
+    { "key": "packaging",           "label": "Packaging & labelling",              "value_inr": 30000,  "benchmark_range": [20000, 45000] }
+  ],
+  "opex": [
+    { "key": "raw_material",        "label": "Raw material",                       "value_inr": 38000 },
+    { "key": "labour",              "label": "Labour (3 people)",                  "value_inr": 36000 },
+    { "key": "utilities",           "label": "Utilities",                          "value_inr": 6000 },
+    { "key": "other",               "label": "Other",                              "value_inr": 5000 }
+  ],
+  "assumptions": [
+    "Benchmark ranges collected 14 Sep 2026 from local supplier quotes and district industry centre data.",
+    "Not a valuation. Every input is editable and re-runs the calculation locally."
+  ]
+}

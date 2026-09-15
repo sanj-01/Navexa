@@ -1,0 +1,21 @@
+{
+  "sector": "professional-services",
+  "label": "Professional services",
+  "capex": [
+    { "key": "premises_deposit",    "label": "Premises deposit (3 months, if leased)",  "value_inr": 45000,  "benchmark_range": [0, 90000],    "note": "Zero if home-based" },
+    { "key": "equipment",           "label": "Computing & workspace equipment",         "value_inr": 80000,  "benchmark_range": [50000, 150000] },
+    { "key": "licences",            "label": "Licences & registrations",                "value_inr": 0,      "note": "Pulled from your pathway" },
+    { "key": "software",            "label": "Software & subscriptions (first year)",   "value_inr": 30000,  "benchmark_range": [15000, 60000] },
+    { "key": "marketing",           "label": "Website, branding & initial marketing",   "value_inr": 40000,  "benchmark_range": [20000, 90000] }
+  ],
+  "opex": [
+    { "key": "rent",                "label": "Rent / co-working",                        "value_inr": 15000 },
+    { "key": "labour",              "label": "Labour (2 people)",                        "value_inr": 60000 },
+    { "key": "utilities",           "label": "Utilities & internet",                     "value_inr": 4000 },
+    { "key": "other",               "label": "Other",                                    "value_inr": 6000 }
+  ],
+  "assumptions": [
+    "Benchmark ranges collected 14 Sep 2026 from local rate cards and freelance platforms.",
+    "Not a valuation. Every input is editable and re-runs the calculation locally."
+  ]
+}

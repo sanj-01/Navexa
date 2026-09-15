@@ -1,0 +1,21 @@
+{
+  "sector": "small-manufacturing",
+  "label": "Small-scale manufacturing",
+  "capex": [
+    { "key": "premises_deposit",    "label": "Premises deposit (3 months)",        "value_inr": 90000,  "benchmark_range": [60000, 150000] },
+    { "key": "machinery",           "label": "Machinery & tooling",                "value_inr": 350000, "benchmark_range": [200000, 600000] },
+    { "key": "licences",            "label": "Licences & registrations",           "value_inr": 0,      "note": "Pulled from your pathway" },
+    { "key": "raw_material",        "label": "Initial raw material",               "value_inr": 100000, "benchmark_range": [60000, 180000] },
+    { "key": "packaging",           "label": "Packaging & labelling",              "value_inr": 40000,  "benchmark_range": [25000, 70000] }
+  ],
+  "opex": [
+    { "key": "raw_material",        "label": "Raw material",                       "value_inr": 80000 },
+    { "key": "labour",              "label": "Labour (5 people)",                  "value_inr": 60000 },
+    { "key": "utilities",           "label": "Utilities",                          "value_inr": 12000 },
+    { "key": "other",               "label": "Other",                              "value_inr": 8000 }
+  ],
+  "assumptions": [
+    "Benchmark ranges collected 14 Sep 2026 from local supplier quotes and district industry centre data.",
+    "Not a valuation. Every input is editable and re-runs the calculation locally."
+  ]
+}

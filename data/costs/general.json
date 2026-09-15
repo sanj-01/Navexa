@@ -1,0 +1,21 @@
+{
+  "sector": "general",
+  "label": "General small business — fallback model",
+  "capex": [
+    { "key": "premises_deposit",    "label": "Premises deposit (3 months, if leased)",  "value_inr": 60000,  "benchmark_range": [0, 150000],  "note": "Zero if home-based" },
+    { "key": "fitout",              "label": "Fit-out, furniture, signage",             "value_inr": 80000,  "benchmark_range": [40000, 200000] },
+    { "key": "licences",            "label": "Licences & registrations",                "value_inr": 0,      "note": "Pulled from your pathway" },
+    { "key": "initial_stock",       "label": "Initial stock / raw material",            "value_inr": 60000,  "benchmark_range": [20000, 150000] },
+    { "key": "marketing",           "label": "Signage & initial marketing",             "value_inr": 25000,  "benchmark_range": [10000, 60000] }
+  ],
+  "opex": [
+    { "key": "rent",                "label": "Rent / lease",                            "value_inr": 20000 },
+    { "key": "labour",              "label": "Labour",                                  "value_inr": 30000 },
+    { "key": "utilities",           "label": "Utilities & internet",                    "value_inr": 5000 },
+    { "key": "other",               "label": "Other running costs",                     "value_inr": 5000 }
+  ],
+  "assumptions": [
+    "Illustrative fallback model — not tuned to your specific sector.",
+    "Every value is editable and re-runs the calculation locally. Not a valuation."
+  ]
+}

@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Refined modern design tokens with subtle elegance */
+:root {
+  --ink: #0f172a;
+  --paper: #f8fafc;
+  --surface: #ffffff;
+  --surface-hover: #f1f5f9;
+  --surface-subtle: #f8fafc;
+  --slate: #64748b;
+  --slate-light: #94a3b8;
+  --rule: #e2e8f0;
+  --gold: #b45309;
+  --gold-subtle: #fffbeb;
+  --flag: #dc2626;
+}
+
+html,
+body {
+  background-color: var(--paper);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  font-feature-settings: "ss01", "cv02", "cv03", "cv04";
+}
+
+/* Fraunces at weight 500 for display and obligation names. */
+.font-display {
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+/* Tabular numerals wherever a fee, date, or threshold renders. */
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Motion is reserved for the pathway reveal. */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* Visible keyboard focus. Clean, subtle ring. */
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+/* Hairline utility for clean, subtle borders. */
+.hairline {
+  border-color: var(--rule);
+}
+
+/* Phase-encoded left border on obligation cards. */
+.phase-pre-launch {
+  border-left-color: #94a3b8;
+}
+.phase-at-launch {
+  border-left-color: var(--ink);
+}
+.phase-ongoing {
+  border-left-color: #2563eb;
+}
+
+/* Pathway reveal animation */
+@keyframes pathway-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.reveal {
+  opacity: 0;
+  animation: pathway-reveal 320ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Gold accent tokens */
+.gold {
+  color: var(--gold);
+}
+.gold-fill {
+  background-color: var(--gold);
+}
+.gold-border {
+  border-color: var(--gold);
+}
+
+/* Flag color: warning or overdue */
+.flag {
+  color: var(--flag);
+}
+
+/* Citation markers */
+.citation-marker {
+  color: var(--gold);
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}

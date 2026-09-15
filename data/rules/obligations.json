@@ -1,0 +1,320 @@
+[
+  {
+    "id": "ENTITY_REGISTRATION",
+    "name": "Entity registration",
+    "category": "entity",
+    "authority": "Ministry of Corporate Affairs / State Registrar",
+    "portal": "MCA21 (for LLP / Pvt Ltd) or district registrar (for firms)",
+    "portal_url": "https://www.mca.gov.in/",
+    "triggers": { "universal_base": true },
+    "depends_on": [],
+    "blocks": [],
+    "fee_inr": null,
+    "fee_note": "Varies by entity type — see the entity comparison in your pathway",
+    "timeline_days": [1, 15],
+    "documents": [
+      "PAN of proprietor / partners / directors",
+      "Address proof (utility bill, rent agreement or ownership document)",
+      "Passport photographs"
+    ],
+    "confidence": "high",
+    "phase": "pre-launch",
+    "citation": {
+      "doc_id": "mca_entity_types",
+      "locator": "Companies Act 2013; LLP Act 2008; Partnership Act 1932",
+      "url": "https://www.mca.gov.in/",
+      "verified_on": null,
+      "verified_by": null
+    }
+  },
+  {
+    "id": "PAN",
+    "name": "Permanent Account Number (PAN)",
+    "category": "identity",
+    "authority": "Income Tax Department",
+    "portal": "NSDL / UTIITSL",
+    "portal_url": "https://www.protean-tinpan.com/",
+    "triggers": { "universal_base": true },
+    "depends_on": ["ENTITY_REGISTRATION"],
+    "blocks": [],
+    "fee_inr": null,
+    "fee_note": "Nominal issuance fee — see NSDL/UTIITSL fee schedule",
+    "timeline_days": [7, 21],
+    "confidence": "high",
+    "phase": "pre-launch",
+    "citation": {
+      "doc_id": "it_pan_rules",
+      "locator": "Income-tax Rules, 1962 — Rule 114",
+      "url": "https://incometaxindia.gov.in/",
+      "verified_on": null,
+      "verified_by": null
+    }
+  },
+  {
+    "id": "TAN",
+    "name": "Tax Deduction Account Number (TAN)",
+    "category": "identity",
+    "authority": "Income Tax Department",
+    "portal": "TIN-NSDL",
+    "portal_url": "https://www.protean-tinpan.com/",
+    "triggers": {
+      "any": ["employees_micro", "employees_small", "employees_medium", "employees_large"]
+    },
+    "depends_on": ["PAN"],
+    "blocks": [],
+    "fee_inr": null,
+    "fee_note": "Nominal fee via TIN-NSDL",
+    "timeline_days": [7, 21],
+    "confidence": "high",
+    "phase": "pre-launch",
+    "reason": "Required because you will deduct tax at source (TDS) on salaries or contractor payments.",
+    "citation": {
+      "doc_id": "it_tan_rules",
+      "locator": "Income-tax Act 1961 — Section 203A",
+      "url": "https://incometaxindia.gov.in/",
+      "verified_on": null,
+      "verified_by": null
+    }
+  },
+  {
+    "id": "UDYAM",
+    "name": "Udyam Registration (MSME)",
+    "category": "registration",
+    "authority": "Ministry of MSME",
+    "portal": "Udyam Registration",
+    "portal_url": "https://udyamregistration.gov.in/",
+    "triggers": { "universal_base": true },
+    "depends_on": ["PAN"],
+    "blocks": [],
+    "fee_inr": 0,
+    "fee_note": "Free. Gates PMEGP, CGTMSE, and most state schemes.",
+    "timeline_days": [0, 1],
+    "confidence": "high",
+    "phase": "pre-launch",
+    "citation": {
+      "doc_id": "msme_udyam_notification",
+      "locator": "MSME Notification S.O. 2119(E), 26 June 2020",
+      "url": "https://udyamregistration.gov.in/",
+      "verified_on": null,
+      "verified_by": null
+    }
+  },
+  {
+    "id": "BANK_ACCOUNT",
+    "name": "Current bank account",
+    "category": "banking",
+    "authority": "Any scheduled commercial bank",
+    "triggers": { "universal_base": true },
+    "depends_on": ["PAN"],
+    "blocks": [],
+    "fee_inr": null,
+    "fee_note": "Varies by bank",
+    "timeline_days": [1, 7],
+    "confidence": "high",
+    "phase": "pre-launch",
+    "citation": {
+      "doc_id": "rbi_kyc_directions",
+      "locator": "RBI Master Direction — KYC, 2016 (as amended)",
+      "url": "https://www.rbi.org.in/",
+      "verified_on": null,
+      "verified_by": null
+    }
+  },
+  {
+    "id": "GST",
+    "name": "GST registration",
+    "category": "tax",
+    "authority": "Central Board of Indirect Taxes and Customs (CBIC)",
+    "portal": "GST Portal",
+    "portal_url": "https://www.gst.gov.in/",
+    "triggers": {
+      "any": ["turnover_above_threshold", "interstate_supply", "sells_online", "imports_exports"]
+    },
+    "depends_on": ["PAN", "BANK_ACCOUNT"],
+    "blocks": [],
+    "fee_inr": 0,
+    "fee_note": "No government fee for registration",
+    "timeline_days": [3, 7],
+    "confidence": "high",
+    "phase": "at-launch",
+    "reason": "Required because of turnover / interstate supply / e-commerce.",
+    "citation": {
+      "doc_id": "cbic_gst_registration",
+      "locator": "CGST Act 2017, Sections 22 and 24",
+      "url": "https://cbic-gst.gov.in/",
+      "verified_on": null,
+      "verified_by": null
+    }
+  },
+  {
+    "id": "SHOPS_ESTABLISHMENTS",
+    "name": "Shops and Establishments registration (TN)",
+    "category": "registration",
+    "authority": "Labour Department, Government of Tamil Nadu",
+    "triggers": {
+      "any": ["customer_premises", "employees_micro", "employees_small", "employees_medium", "employees_large"]
+    },
+    "depends_on": ["ENTITY_REGISTRATION"],
+    "blocks": ["TRADE_LICENCE"],
+    "fee_inr": null,
+    "fee_note": "Fee depends on employee count — confirm with local labour office",
+    "timeline_days": [7, 30],
+    "confidence": "high",
+    "phase": "at-launch",
+    "citation": {
+      "doc_id": "tn_shops_act_1947",
+      "locator": "Tamil Nadu Shops and Establishments Act, 1947",
+      "url": "https://labour.tn.gov.in/",
+      "verified_on": null,
+      "verified_by": null
+    }
+  },
+  {
+    "id": "TRADE_LICENCE",
+    "name": "Trade licence (local body)",
+    "category": "licence",
+    "authority": "Local municipal corporation or panchayat",
+    "triggers": { "any": ["customer_premises"] },
+    "depends_on": ["ENTITY_REGISTRATION"],
+    "blocks": [],
+    "fee_inr": null,
+    "fee_note": "Fee varies by corporation, trade type and premises area",
+    "timeline_days": [15, 45],
+    "confidence": "high",
+    "phase": "at-launch",
+    "citation": {
+      "doc_id": "tn_urban_local_bodies",
+      "locator": "Tamil Nadu District Municipalities Act, 1920; Chennai City Municipal Corporation Act, 1919",
+      "url": "https://www.tn.gov.in/",
+      "verified_on": null,
+      "verified_by": null
+    }
+  },
+  {
+    "id": "FSSAI_BASIC",
+    "name": "FSSAI Basic Registration",
+    "category": "licence",
+    "authority": "Food Safety and Standards Authority of India",
+    "portal": "FoSCoS",
+    "portal_url": "https://foscos.fssai.gov.in/",
+    "triggers": { "all": ["handles_food"] },
+    "depends_on": ["ENTITY_REGISTRATION"],
+    "blocks": [],
+    "fee_inr": null,
+    "fee_note": "Fee per year of validity — confirm the current schedule on FoSCoS",
+    "timeline_days": [7, 30],
+    "documents": [
+      "Photo identity proof of proprietor",
+      "Proof of premises (rental agreement or ownership)",
+      "Passport-size photograph",
+      "Food safety management plan / declaration"
+    ],
+    "renewal": { "cycle_months": 12, "grace_days": 30 },
+    "penalty_note": "Operating food business without registration attracts penalty under the FSS Act 2006",
+    "confidence": "high",
+    "phase": "at-launch",
+    "reason": "Required because your business handles food.",
+    "citation": {
+      "doc_id": "fssai_licensing_regs_2011",
+      "locator": "FSS (Licensing and Registration of Food Businesses) Regulations, 2011 — Regulation 2.1",
+      "url": "https://www.fssai.gov.in/",
+      "verified_on": null,
+      "verified_by": null
+    }
+  },
+  {
+    "id": "LEGAL_METROLOGY",
+    "name": "Legal Metrology — packer registration",
+    "category": "registration",
+    "authority": "Controller of Legal Metrology, Government of Tamil Nadu",
+    "triggers": { "any": ["packaged_goods_by_weight"] },
+    "depends_on": ["ENTITY_REGISTRATION"],
+    "blocks": [],
+    "fee_inr": null,
+    "fee_note": "Fee schedule set by state Legal Metrology department",
+    "timeline_days": [15, 45],
+    "confidence": "high",
+    "phase": "at-launch",
+    "reason": "Required because you sell pre-packaged goods by weight or measure.",
+    "citation": {
+      "doc_id": "legal_metrology_act_2009",
+      "locator": "Legal Metrology Act, 2009; Packaged Commodities Rules, 2011",
+      "url": "https://consumeraffairs.nic.in/",
+      "verified_on": null,
+      "verified_by": null
+    }
+  },
+  {
+    "id": "EPF",
+    "name": "EPF registration",
+    "category": "labour",
+    "authority": "Employees' Provident Fund Organisation (EPFO)",
+    "portal": "EPFO Unified Portal",
+    "portal_url": "https://www.epfindia.gov.in/",
+    "triggers": {
+      "any": ["employees_medium", "employees_large"]
+    },
+    "depends_on": ["ENTITY_REGISTRATION", "PAN"],
+    "blocks": [],
+    "fee_inr": 0,
+    "fee_note": "No registration fee; monthly contributions apply",
+    "timeline_days": [7, 30],
+    "confidence": "high",
+    "phase": "ongoing",
+    "citation": {
+      "doc_id": "epf_mp_act_1952",
+      "locator": "Employees' Provident Funds and Miscellaneous Provisions Act, 1952",
+      "url": "https://www.epfindia.gov.in/",
+      "verified_on": null,
+      "verified_by": null
+    }
+  },
+  {
+    "id": "ESI",
+    "name": "ESI registration",
+    "category": "labour",
+    "authority": "Employees' State Insurance Corporation (ESIC)",
+    "portal": "ESIC Portal",
+    "portal_url": "https://www.esic.gov.in/",
+    "triggers": {
+      "any": ["employees_small", "employees_medium", "employees_large"]
+    },
+    "depends_on": ["ENTITY_REGISTRATION", "PAN"],
+    "blocks": [],
+    "fee_inr": 0,
+    "fee_note": "No registration fee; monthly contributions apply",
+    "timeline_days": [7, 30],
+    "confidence": "high",
+    "phase": "ongoing",
+    "citation": {
+      "doc_id": "esi_act_1948",
+      "locator": "Employees' State Insurance Act, 1948",
+      "url": "https://www.esic.gov.in/",
+      "verified_on": null,
+      "verified_by": null
+    }
+  },
+  {
+    "id": "PROFESSIONAL_TAX",
+    "name": "Professional tax registration (TN)",
+    "category": "tax",
+    "authority": "Local body (municipal corporation / panchayat) under state Professional Tax Act",
+    "triggers": {
+      "any": ["employees_micro", "employees_small", "employees_medium", "employees_large", "customer_premises"]
+    },
+    "depends_on": ["ENTITY_REGISTRATION"],
+    "blocks": [],
+    "fee_inr": null,
+    "fee_note": "Slab-based, set by local body",
+    "timeline_days": [15, 45],
+    "confidence": "medium",
+    "phase": "ongoing",
+    "citation": {
+      "doc_id": "tn_professional_tax",
+      "locator": "Tamil Nadu Tax on Professions, Trades, Callings and Employments Act, 1992",
+      "url": "https://www.tn.gov.in/",
+      "verified_on": null,
+      "verified_by": null
+    }
+  }
+]
