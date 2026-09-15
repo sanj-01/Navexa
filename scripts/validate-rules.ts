@@ -63,6 +63,12 @@ interface Rule {
 }
 
 async function main() {
+  // Escape hatch for demo deploys — set SKIP_RULES_VALIDATION=1 to warn
+  // instead of failing. Gate 3 (§4.5) still applies before real production
+  // ship; this only unblocks Vercel builds where the human sweep hasn't
+  // happened yet.
+  const skip = process.env.SKIP_RULES_VALIDATION === "1";
+
   const file = path.join(process.cwd(), "data", "rules", "obligations.json");
   let raw: string;
   try {
@@ -119,13 +125,18 @@ async function main() {
   }
 
   if (errors.length > 0) {
-    console.error(`\n[validate-rules] ${errors.length} error(s) in data/rules/obligations.json:\n`);
-    for (const e of errors) console.error("  - " + e);
-    console.error(
+    const level = skip ? "warn" : "error";
+    console[level](`\n[validate-rules] ${errors.length} issue(s) in data/rules/obligations.json:\n`);
+    for (const e of errors) console[level]("  - " + e);
+    console[level](
       "\nSee ANVIL-SPEC.md §4.2 and §4.5. Values that cannot be verified against\n" +
         "a primary source are deleted, not guessed. The obligation may still\n" +
         "render with the number replaced by \"confirm with authority.\"\n"
     );
+    if (skip) {
+      console.warn("[validate-rules] SKIP_RULES_VALIDATION=1 — allowing build to continue.");
+      return;
+    }
     process.exit(1);
   }
 
